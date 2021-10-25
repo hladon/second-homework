@@ -1,36 +1,18 @@
-const express = require('express');
-const bp = require('body-parser');
-const Joi = require('joi');
+import express from 'express';
+import bp from 'body-parser';
+import Joi from 'joi';
+import {findById} from './service/userService.js'
 const app=express();
 const port=3000;
 
 app.use(bp.json());
-
-const user1={
-  id: '1',
-  login: 'us1',
-  password: 'us1',
-  age: 6,
-  isDeleted: false,
-};
-const user2={
-  id: '2',
-  login: 'us2',
-  password: 'us2',
-  age: 13,
-  isDeleted: false,
-};
-const users=[user1, user2];
+const users=[];
 
 app.get('/', (req, res) => {
-  let userId =findById(req.query.id);
-  if (userId===undefined) {
-    userId='Such user don`t exist';
-  }
-  if (userId.isDeleted==true) {
-    userId='Such user don`t exist';
-  }
-  res.send(userId);
+  console.log('call get')
+  findById(req.query.id).then((user)=>{
+    res.send(user);
+  });
 });
 
 app.get('/users', (req, res) => {
@@ -104,12 +86,7 @@ function getAutoSuggestUsers(subString, limit) {
   }
   return results.slice(0, limit-1);
 }
-function findById(id) {
-  function equalId(value) {
-    return value.id==id;
-  }
-  return users.find(equalId);
-}
+
 
 function findIndexById(id) {
   function equalId(value) {
