@@ -1,3 +1,7 @@
 id,login,password,age,isDeleted
-1,us1,user1111,10,false
-2,us2,user2222,15,false
+1,us1,user1111,12,true
+2,us2,user2222,15,true
+3,us3,user3333,20,false
+4,us4,user4444,25,false
+5,us5,user5555,30,false
+6,us6,user6666,35,false
