@@ -5,7 +5,9 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "task1": "eslint --fix \"**/**.js\" && nodemon server.js"
+    "lint":"eslint --fix \"**/**.js\"",
+    "start":"eslint --fix \"**/**.js\" && node server.js",
+    "dev": "eslint --fix \"**/**.js\" && nodemon server.js"
   },
   "author": "",
   "license": "ISC",

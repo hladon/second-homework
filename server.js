@@ -3,7 +3,7 @@ import bp from 'body-parser';
 import Joi from 'joi';
 import {findById,getAutoSuggestUsers,saveUser,deleteUser} from './service/userService.js';
 import db from 'dotenv';
-db.config({path:"config/.env"});
+db.config();
 const app=express();
 const port=process.env.PORT;
 
