@@ -1,7 +1,6 @@
 import save from '../repository/create.js';
 
-async function saveUser(validatedUser) {
-  const user =validatedUser.value;
+async function saveUser(user) {
   const status=await save(user);
   if (status) {
     return `User ${JSON.stringify(user)} has been created`;

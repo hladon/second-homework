@@ -1,11 +1,10 @@
 import express from 'express';
 import bp from 'body-parser';
-
-import db from 'dotenv';
+import config from './config/index.js';
 import router from './api/router.js';
-db.config();
+
 const app=express();
-const port=process.env.PORT;
+const port=config.port;
 app.use(bp.json());
 
 app.use('/', router);
