@@ -17,7 +17,7 @@ export default function update(req, res) {
     res.status(403).send(userValidation.error.details);
     return;
   }
-  updateUser(userValidation).then((outpoot)=>{
+  updateUser(userValidation.value).then((outpoot)=>{
     res.send(outpoot);
   });
 };

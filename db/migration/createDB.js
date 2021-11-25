@@ -1,4 +1,5 @@
-import User from '../../api/user/repository/userRepository.js';
+import connection from '../../api/common/DBModel.js';
 
-await User.sync({force: true});
+connection.sync({ force: true });
+
 console.log('All models were synchronized successfully.');

@@ -1,8 +1,8 @@
 import csv from 'csvtojson';
 import {createReadStream} from 'fs';
 import csvWriter from 'csv-writer';
-import db from 'dotenv';
-db.config();
+import dotEnvInit from '../../../config/dotenvInit.js';
+
 const filePath=process.env.FILE_PATH;
 
 async function find(id) {

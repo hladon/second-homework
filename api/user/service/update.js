@@ -1,8 +1,7 @@
 import update from '../repository/update.js';
 import findById from '../repository/getById.js';
 
-async function updateUser(validatedUser) {
-  const user =validatedUser.value;
+async function updateUser(user) {
   const existUser= findById(user.id);
   if (existUser.isDeleted) {
     return 'User doesn`t exist anymore';
