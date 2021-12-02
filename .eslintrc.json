@@ -8,8 +8,19 @@
         "google"
     ],
     "parserOptions": {
-        "ecmaVersion": 13
+        "ecmaVersion": 13,
+        "sourceType":"module"
     },
     "rules": {
+        "require-jsdoc": ["error", {
+            "require": {
+                "FunctionDeclaration": false,
+                "MethodDefinition": false,
+                "ClassDeclaration": false,
+                "ArrowFunctionExpression": false,
+                "FunctionExpression": false
+            }
+        }]
     }
+    
 }

@@ -6,8 +6,9 @@
   "type": "module",
   "scripts": {
     "lint":"eslint --fix \"**/**.js\"",
-    "start":"eslint --fix \"**/**.js\" && node server.js",
-    "dev": "eslint --fix \"**/**.js\" && nodemon server.js"
+    "start":"npm run lint && node server.js",
+    "dev": "npm run lint && nodemon server.js",
+    "migration":"node ./db/migration/createDB.js"
   },
   "author": "",
   "license": "ISC",
