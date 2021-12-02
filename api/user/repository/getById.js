@@ -1,4 +1,4 @@
-import User from './userRepository.js';
+import {User} from '../../common/UserAndGroupRepository.js';
 
 async function findById(id) {
   const user=await User.findByPk(id);

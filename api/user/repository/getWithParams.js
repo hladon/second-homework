@@ -1,6 +1,6 @@
 import Sequelize from 'sequelize';
 const Op=Sequelize.Op;
-import User from './userRepository.js';
+import {User} from '../../common/UserAndGroupRepository.js';
 
 async function suggestUsers(subString, lim) {
   const users=await User.findAll({

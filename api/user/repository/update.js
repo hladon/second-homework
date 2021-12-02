@@ -1,4 +1,4 @@
-import User from './userRepository.js';
+import {User} from '../../common/UserAndGroupRepository.js';
 
 export default async function save(entity) {
   try {

@@ -5,10 +5,13 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "lint":"eslint --fix \"**/**.js\"",
-    "start":"npm run lint && node server.js",
+    "lint": "eslint --fix \"**/**.js\"",
+    "start": "npm run lint && node server.js",
     "dev": "npm run lint && nodemon server.js",
-    "migration":"node ./db/migration/createDB.js"
+    "seedsUp":"npx sequelize-cli db:seed:all",
+    "seedsDown":"npx sequelize-cli db:seed:undo",
+    "migrationUp": "npx sequelize-cli db:migrate",
+    "migrationDown":"npx sequelize-cli db:migrate:undo:all"
   },
   "author": "",
   "license": "ISC",
@@ -24,7 +27,12 @@
     "sequelize": "^6.7.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "babel-register": "^6.26.0",
     "eslint": "^8.0.1",
-    "eslint-config-google": "^0.14.0"
+    "eslint-config-google": "^0.14.0",
+    "sequelize-cli": "^6.3.0"
   }
 }
