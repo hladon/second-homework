@@ -1,9 +1,9 @@
-import {Group} from '../../common/UserAndGroupRepository.js';
+import { Group } from '../../common/models/relations.js';
 
 export default async function remove(GroupId) {
-  await Group.destroy({
-    where: {
-      id: GroupId,
-    },
-  });
+    return await Group.destroy({
+        where: {
+            id: GroupId
+        }
+    });
 }

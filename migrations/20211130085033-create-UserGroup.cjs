@@ -6,7 +6,7 @@ module.exports = {
                 type: Sequelize.INTEGER,
                 primaryKey: true,
                 autoIncrement: true,
-                field: 'UserGroup_id'},
+                field: 'user_group_id'},
         GroupId:{
                 type: Sequelize.INTEGER,
                 references:{
@@ -15,6 +15,7 @@ module.exports = {
                   },
                   key: 'group_id'
                 },
+                onDelete: 'CASCADE',
                 allowNull: false
         },
         UserId:{

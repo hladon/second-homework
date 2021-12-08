@@ -1,5 +1,5 @@
 import express from 'express';
-const router=express.Router();
+const router = express.Router();
 import getById from './controller/getById.js';
 import create from './controller/create.js';
 import getWithParams from './controller/getWithParams.js';
