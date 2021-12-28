@@ -1,22 +1,16 @@
 import Joi from 'Joi';
 import addUser from '../service/addUserToGroup.js';
+import requestHandler from '../../../lib/api.js'
 
-const idSchema = Joi.number().integer().min(0);
-export default function addUserToGroup(req, res) {
-    const userId = idSchema.validate(req.query.usId);
-    const groupId = idSchema.validate(req.query.grId);
+const schema = Joi.object({
+    usId: Joi.number().integer().min(0),
+    grId: Joi.number().integer().min(0),
+})
 
-    if (userId.error) {
-        res.status(403).send(userId.error.details);
-        return;
-    }
-
-    if (groupId.error) {
-        res.status(403).send(groupId.error.details);
-        return;
-    }
-
+const addUserToGroup = requestHandler('Add user to group - Group API', schema, async(req, res, next) => {
     addUser(userId.value, groupId.value).then((report) => {
         res.send(report);
     });
-}
+})
+
+export default addUserToGroup

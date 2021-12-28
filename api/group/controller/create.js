@@ -1,20 +1,17 @@
 import Joi from 'joi';
 import saveGroup from '../service/create.js';
 import { permissions } from '../common/constants.js';
+import requestHandler from '../../../lib/api.js'
 
-const groupSchema = Joi.object({
+const schema = Joi.object({
     name: Joi.string().required(),
-    permissions:Joi.string().valid(...permissions).required()
+    permissions: Joi.string().valid(...permissions).required()
 });
 
-export default function save(req, res) {
-    const group = req.body;
-    const groupValidation = groupSchema.validate(group);
-    if (groupValidation.error) {
-        res.status(403).send(groupValidation.error.details);
-        return;
-    }
+const save = requestHandler('Save group - Group API', schema, async(req, res, next) => {
     saveGroup(groupValidation.value).then((outpoot) => {
         res.send(outpoot);
     });
-}
+})
+
+export default save

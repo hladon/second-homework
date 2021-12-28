@@ -1,20 +1,17 @@
 import Joi from 'joi';
 import getAutoSuggestUsers from '../service/getWithParams.js';
-const subStringSchema = Joi.string();
-const limitSchema = Joi.number().integer().min(0);
-export default function getUsers(req, res) {
-    const substring = subStringSchema.validate(req.query.sub);
-    if (substring.error) {
-        res.status(403).send(substring.error.details);
-        return;
-    }
-    const validLimit = limitSchema.validate(req.query.sub);
-    if (validLimit.error) {
-        res.status(403).send(validLimit.error.details);
-        return;
-    }
-    getAutoSuggestUsers(substring.value, validLimit.value)
+import requestHandler from '../../../lib/api.js'
+
+const schema = Joi.object({
+    sub: Joi.string(),
+    lim: Joi.number().integer().min(0)
+})
+
+const getUsers = requestHandler('Get users with parameters - User API', schema, async(req, res, next) => {
+    getAutoSuggestUsers(req.query.sub, req.query.lim)
         .then((output) => {
             res.send(output);
         });
-}
+})
+
+export default getUsers
