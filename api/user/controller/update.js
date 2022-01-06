@@ -12,8 +12,8 @@ const schema = Joi.object({
 });
 
 const update = requestHandler('Get by id - User API', schema, async(req, res, next) => {
-    updateUser(userValidation.value).then((outpoot) => {
-        res.send(outpoot);
+    updateUser(req.body).then((output) => {
+        res.send(output);
     });
 })
 

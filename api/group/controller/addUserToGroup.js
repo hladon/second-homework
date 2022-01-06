@@ -8,7 +8,7 @@ const schema = Joi.object({
 })
 
 const addUserToGroup = requestHandler('Add user to group - Group API', schema, async(req, res, next) => {
-    addUser(userId.value, groupId.value).then((report) => {
+    addUser(req.body.usId, req.body.grId).then((report) => {
         res.send(report);
     });
 })

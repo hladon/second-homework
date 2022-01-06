@@ -7,7 +7,7 @@ const schema = Joi.object({
 });
 
 const remove = requestHandler('Remove by id - User API', schema, async(req, res, next) => {
-    removeUser(idValidation.value).then((response) => {
+    removeUser(req.body.id).then((response) => {
         res.send(response);
     });
 })

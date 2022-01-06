@@ -12,10 +12,6 @@ const port = config.port;
 
 initialize()
 
-app.listen(port, () => {
-    logger.info(`Example app listening at http://localhost:${port}`);
-});
-
 function initialize() {
     app.use(bp.json());
 
@@ -38,5 +34,9 @@ function initialize() {
         .on('uncaughtException', err => {
             logger.report('Uncaught Exception thrown', err);
         });
+
+    app.listen(port, () => {
+        logger.info(`Example app listening at http://localhost:${port}`);
+    });
 }
 export { app };

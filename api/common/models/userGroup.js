@@ -1,15 +1,15 @@
 import Sequelize from 'sequelize';
 const { DataTypes } = Sequelize;
-import connection from '../lib/DB.js';
+import connection from '../../../lib/db/DB.js';
 
 const UserGroup = connection.define('UserGroup', {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
-        field: 'UserGroup_id' }
-}
-, {
+        field: 'UserGroup_id'
+    }
+}, {
     timestamps: false,
     tableName: 'user_group'
 });

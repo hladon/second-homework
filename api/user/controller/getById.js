@@ -7,7 +7,7 @@ const schema = Joi.object({
 });
 
 const getById = requestHandler('Get by id - User API', schema, async(req, res, next) => {
-    findById(req.query.id).then((user) => {
+    findById(req.body.id).then((user) => {
         return res.send(user);
     })
 })

@@ -9,8 +9,8 @@ const schema = Joi.object({
 });
 
 const save = requestHandler('Save group - Group API', schema, async(req, res, next) => {
-    saveGroup(groupValidation.value).then((outpoot) => {
-        res.send(outpoot);
+    saveGroup(req.body).then((output) => {
+        res.send(output);
     });
 })
 

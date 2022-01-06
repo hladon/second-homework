@@ -7,7 +7,7 @@ const schema = Joi.object({
 })
 
 const getById = requestHandler('Get by id - Group API', schema, async(req, res, next) => {
-    findById(idValidation.value).then((user) => {
+    findById(req.body.id).then((user) => {
         res.send(user);
     });
 })

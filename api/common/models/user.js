@@ -1,22 +1,24 @@
 import Sequelize from 'sequelize';
 const { DataTypes } = Sequelize;
-import connection from '../lib/DB.js';
+import connection from '../../../lib/db/DB.js';
 
 const User = connection.define('User', {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
-        field: 'user_id' },
+        field: 'user_id'
+    },
     login: {
         type: DataTypes.STRING,
-        field: 'user_login' },
+        field: 'user_login'
+    },
     password: {
         type: DataTypes.STRING,
-        field: 'user_password' },
+        field: 'user_password'
+    },
     age: DataTypes.INTEGER
-}
-, {
+}, {
     paranoid: true,
     tableName: 'users',
     deletedAt: 'isDeleted'

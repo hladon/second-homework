@@ -10,8 +10,8 @@ const schema = Joi.object({
 });
 
 const update = requestHandler('Update group - Group API', schema, async(req, res, next) => {
-    updateGroup(groupValidation.value).then((outpoot) => {
-        res.send(outpoot);
+    updateGroup(req.body).then((output) => {
+        res.send(output);
     });
 })
 

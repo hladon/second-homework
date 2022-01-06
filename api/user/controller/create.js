@@ -11,8 +11,8 @@ const schema = Joi.object({
 });
 
 const save = requestHandler('Save user - User API', schema, async(req, res, next) => {
-    saveUser(userValidation.value).then((outpoot) => {
-        res.send(outpoot);
+    saveUser(req.body).then((output) => {
+        res.send(output);
     });
 })
 

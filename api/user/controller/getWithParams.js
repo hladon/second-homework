@@ -8,7 +8,7 @@ const schema = Joi.object({
 })
 
 const getUsers = requestHandler('Get users with parameters - User API', schema, async(req, res, next) => {
-    getAutoSuggestUsers(req.query.sub, req.query.lim)
+    getAutoSuggestUsers(req.body.sub, req.body.lim)
         .then((output) => {
             res.send(output);
         });
