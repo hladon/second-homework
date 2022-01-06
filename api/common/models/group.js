@@ -1,6 +1,6 @@
 import Sequelize from 'sequelize';
 const { DataTypes } = Sequelize;
-import connection from '../lib/DB.js';
+import connection from '../../../lib/db/DB.js';
 
 const Group = connection.define('Groups', {
     id: {
@@ -21,3 +21,4 @@ const Group = connection.define('Groups', {
 });
 
 export default Group;
+

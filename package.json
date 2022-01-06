@@ -1,40 +1,44 @@
 {
-  "name": "node-home-work2",
-  "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
-  "type": "module",
-  "scripts": {
-    "lint": "eslint --fix \"**/**.js\"",
-    "start": "npm run lint && node server.js",
-    "dev": "npm run lint && nodemon server.js",
-    "seedsUp": "npx sequelize-cli db:seed:all",
-    "seedsDown": "npx sequelize-cli db:seed:undo",
-    "migrationUp": "npx sequelize-cli db:migrate",
-    "migrationDown": "npx sequelize-cli db:migrate:undo:all"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "body-parser": "^1.19.0",
-    "csv-writer": "^1.6.0",
-    "csvtojson": "^2.0.10",
-    "dotenv": "^10.0.0",
-    "express": "^4.17.1",
-    "joi": "^17.4.2",
-    "pg": "^8.7.1",
-    "pg-hstore": "^2.3.4",
-    "sequelize": "^6.7.0",
-    "winston": "^3.3.3"
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.16.0",
-    "@babel/core": "^7.16.0",
-    "@babel/eslint-parser": "^7.16.3",
-    "@babel/eslint-plugin": "^7.14.5",
-    "@babel/node": "^7.16.0",
-    "@babel/preset-env": "^7.16.4",
-    "eslint": "^8.0.1",
-    "sequelize-cli": "^6.3.0"
-  }
+    "name": "node-home-work2",
+    "version": "1.0.0",
+    "description": "",
+    "main": "server.js",
+    "type": "module",
+    "scripts": {
+        "lint": "eslint --fix \"**/**.js\"",
+        "start": "npm run lint && node server.js",
+        "dev": "npm run lint && nodemon server.js",
+        "seedsUp": "npx sequelize-cli db:seed:all",
+        "seedsDown": "npx sequelize-cli db:seed:undo",
+        "migrationUp": "npx sequelize-cli db:migrate",
+        "migrationDown": "npx sequelize-cli db:migrate:undo:all",
+        "test": "jest"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "cors": "^2.8.5",
+        "csv-writer": "^1.6.0",
+        "csvtojson": "^2.0.10",
+        "dotenv": "^10.0.0",
+        "express": "^4.17.1",
+        "joi": "^17.4.2",
+        "jsonwebtoken": "^8.5.1",
+        "pg": "^8.7.1",
+        "pg-hstore": "^2.3.4",
+        "sequelize": "^6.7.0",
+        "winston": "^3.3.3"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.16.0",
+        "@babel/core": "^7.16.0",
+        "@babel/eslint-parser": "^7.16.3",
+        "@babel/eslint-plugin": "^7.14.5",
+        "@babel/node": "^7.16.0",
+        "@babel/preset-env": "^7.16.4",
+        "eslint": "^8.0.1",
+        "jest": "^27.4.5",
+        "sequelize-cli": "^6.3.0"
+    }
 }

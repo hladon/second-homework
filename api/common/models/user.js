@@ -1,6 +1,7 @@
 import Sequelize from 'sequelize';
 const { DataTypes } = Sequelize;
-import connection from '../lib/DB.js';
+import connection from '../../../lib/db/DB.js';
+
 
 const User = connection.define('User', {
     id: {
@@ -23,3 +24,4 @@ const User = connection.define('User', {
 });
 
 export default User;
+

@@ -1,7 +1,9 @@
 import getAll from '../service/getAll.js';
+import requestHandler from '../../../lib/api.js'
 
-export default function getGroups(req, res) {
+const getGroups = requestHandler('Get all groups - Group API', null, async(req, res, next) => {
     getAll().then((output) => {
         res.send(output);
     });
-}
+})
+export default getGroups

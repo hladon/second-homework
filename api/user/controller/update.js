@@ -1,7 +1,8 @@
 import Joi from 'joi';
 import updateUser from '../service/update.js';
+import requestHandler from '../../../lib/api.js'
 
-const userSchema = Joi.object({
+const schema = Joi.object({
     id: Joi.number().integer().required(),
     login: Joi.string().required(),
     password: Joi.string()
@@ -10,14 +11,10 @@ const userSchema = Joi.object({
     age: Joi.number().integer().max(130).min(4).required()
 });
 
-export default function update(req, res) {
-    const user = req.body;
-    const userValidation = userSchema.validate(user);
-    if (userValidation.error) {
-        res.status(403).send(userValidation.error.details);
-        return;
-    }
-    updateUser(userValidation.value).then((outpoot) => {
-        res.send(outpoot);
+const update = requestHandler('Get by id - User API', schema, async(req, res, next) => {
+    updateUser(req.body).then((output) => {
+        res.send(output);
     });
-}
+})
+
+export default update
