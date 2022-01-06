@@ -2,6 +2,7 @@ import Sequelize from 'sequelize';
 const { DataTypes } = Sequelize;
 import connection from '../../../lib/db/DB.js';
 
+
 const UserGroup = connection.define('UserGroup', {
     id: {
         type: DataTypes.INTEGER,
@@ -10,8 +11,13 @@ const UserGroup = connection.define('UserGroup', {
         field: 'UserGroup_id'
     }
 }, {
+        field: 'UserGroup_id' }
+}
+, {
     timestamps: false,
     tableName: 'user_group'
 });
 
+
 export default UserGroup;
+
