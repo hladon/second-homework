@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken';
-import { SECRET } from '../config/index.js'
+import { SECRET } from '../../../config/index.js'
 import getByLogin from '../../user/repository/getByLogin.js';
 
 export default async function login(username, password) {

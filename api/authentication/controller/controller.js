@@ -1,5 +1,4 @@
 import express from 'express';
-const loginRouter = express.Router();
 import Joi from 'joi';
 import requestHandler from '../../../lib/api.js';
 import login from '../service/authenticate.js';

@@ -6,6 +6,6 @@ import loginRouter from './authentication/controller/controller.js'
 
 router.use('/user', userRouter);
 router.use('/group', groupRouter);
-router.post('/', loginRouter);
+router.use('/login', loginRouter);
 
 export default router;
