@@ -1,6 +1,7 @@
 import dotenv from 'dotenv';
 dotenv.config();
-const config = { port: process.env.PORT || '8080',
+const config = {
+    port: process.env.PORT || '8080',
     sequilizeConfig: {
         host: process.env.HOST,
         port: process.env.DB_PORT,
@@ -8,5 +9,7 @@ const config = { port: process.env.PORT || '8080',
         username: process.env.DB_USER,
         password: process.env.DB_PASSWORD,
         database: process.env.DB_NAME
-    } };
-export default  config;
+    }
+};
+const SECRET = process.env.SECRET
+export { config, SECRET };

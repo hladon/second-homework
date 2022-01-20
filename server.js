@@ -1,10 +1,9 @@
 import express from 'express';
 import bp from 'body-parser';
 import cors from 'cors';
-import config from './config/index.js';
+import { config } from './config/index.js';
 import router from './api/router.js';
 import logger from './lib/logger/index.js';
-import { loginRouter, authenticateToken } from './api/common/authentication/controller.js';
 import middleware from './lib/middleware/index.js';
 
 const app = express();
@@ -19,13 +18,10 @@ function initialize() {
 
     app.use(middleware.request);
 
-    app.use('/login', loginRouter);
-
-    app.use(authenticateToken);
-
     app.use('/', router);
 
     app.use(middleware.error);
+
 
     process
         .on('unhandledRejection', (reason, p) => {
