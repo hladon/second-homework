@@ -1,6 +1,6 @@
 import express from 'express';
 const router = express.Router();
-import authenticate from './authenticate.js';
+import authenticate from './controller/controller.js';
 
 router.post('/', authenticate);
 
